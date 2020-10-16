@@ -1,5 +1,5 @@
 :root {
-  --primary-color: dodgerblue;
+  --primary-color: rgb(99, 6, 6);
   --font-color: white;
 }
 
@@ -43,7 +43,7 @@ video {
 .show-controls {
   width: 100%;
   height: 30%;
-  background: dodgerblue;
+  background: transparent;
   z-index: 2;
   position: absolute;
   bottom: 0;
@@ -89,20 +89,28 @@ video {
 
 /* Progress Bar */
 .progress-range {
+  height: 8px;
+  width: calc(100% - 30px);
+  background: rgba(73, 71, 71, 0.5);
   margin: auto;
   border-radius: 10px;
   position: absolute;
   left: 15px;
   top: 15px;
   cursor: pointer;
+  transition: height 0.1s ease-in-out;
+}
+
+.progress-range:hover {
+  height: 10px;
 }
 
 .progress-bar {
   background: var(--primary-color);
-  width: 50%;
+  width: 20%;
   height: 100%;
   border-radius: 10px;
-  transition: all 0.5s ease;
+  transition: all 0.1s ease;
 }
 
 /* Left Controls -------------------------- */
@@ -168,13 +176,23 @@ video {
   margin-right: 15px;
 }
 
+select,
+option {
+  cursor: pointer;
+}
+
 select {
+  background: transparent;
   color: var(--font-color);
   border: none;
   font-size: 18px;
   position: relative;
   top: -2.5px;
   border-radius: 5px;
+}
+
+select:focus {
+  outline: none;
 }
 
 select > option {
