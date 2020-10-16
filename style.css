@@ -62,6 +62,13 @@ video {
   display: flex;
   justify-content: space-between;
   opacity: 0;
+  transition: all 0.5s ease-out 0.4s;
+}
+
+/* This essentially means that we are changing the styling of the controls-container class when we hover over the show-controls class item */
+.show-controls:hover .controls-container {
+  opacity: 1;
+  transition: all 0.2s ease-out;
 }
 
 .control-group {
